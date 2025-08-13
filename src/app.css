@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+
+html {
+	scroll-behavior: smooth;
+	background-color: rgb(34, 34, 34);
+}
+
+body {
+	font-family: Calibri, cursive;
+	color: white;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
