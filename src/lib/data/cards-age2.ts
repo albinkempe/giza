@@ -90,7 +90,7 @@ export function makeDeckAge2(): Card[] {
 			name: 'Caravansery',
 			type: 'commerce',
 			cost: { wood: 2 },
-			effect: { coins: 4, resources: { wood: 1, stone: 1, clay: 1, ore: 1 } }
+			effect: { coins: 3, resources: { wood: 1, stone: 1, clay: 1, ore: 1 } }
 		},
 		{ id: 39, name: 'Vineyard', type: 'commerce', effect: { coins: 3 } },
 		{ id: 40, name: 'Bazar', type: 'commerce', effect: { coins: 3 } },
