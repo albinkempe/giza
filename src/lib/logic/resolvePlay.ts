@@ -89,24 +89,44 @@ export function applyWonderEffect(
 	applyEffect(player, effect);
 }
 
-/** Simple end-of-age military resolution:
- *  award +1 point for each neighbor you beat (left & right).
- */
 export function endOfAgeResolve(game: GameState): void {
 	const players = game.players;
 	const n = players.length;
+
+	// determine point value per win based on age
+	let winPoints = 0;
+	switch (game.age) {
+		case 1:
+			winPoints = 1;
+			break;
+		case 2:
+			winPoints = 3;
+			break;
+		case 3:
+			winPoints = 5;
+			break;
+		default:
+			winPoints = 0;
+	}
+
 	for (let i = 0; i < n; i++) {
 		const me = players[i];
-		const left = players[(i + 1) % n]; // left neighbor (clockwise)
-		const right = players[(i - 1 + n) % n]; // right neighbor (counter-clockwise)
+		const left = players[(i + 1) % n]; // left neighbor
+		const right = players[(i - 1 + n) % n]; // right neighbor
 
-		let wins = 0;
-		if ((me.military || 0) > (left.military || 0)) wins++;
-		if ((me.military || 0) > (right.military || 0)) wins++;
+		// compare against left neighbor
+		if ((me.military || 0) > (left.military || 0)) {
+			me.score += winPoints;
+		} else if ((me.military || 0) < (left.military || 0)) {
+			me.score -= 1;
+		}
 
-		// award wins as points (simple rule)
-		if (wins > 0) {
-			me.score = (me.score || 0) + wins;
+		// compare against right neighbor
+		if ((me.military || 0) > (right.military || 0)) {
+			me.score += winPoints;
+		} else if ((me.military || 0) < (right.military || 0)) {
+			me.score -= 1;
 		}
 	}
 }
+

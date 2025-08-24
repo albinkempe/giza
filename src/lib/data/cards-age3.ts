@@ -7,21 +7,21 @@ export function makeDeckAge3(): Card[] {
 			id: 43,
 			name: 'Arsenal',
 			type: 'resource',
-			cost: { coins: 2 },
+			cost: { coins: 3 },
 			effect: { resources: { wood: 2, ore: 1 } }
 		},
 		{
 			id: 44,
 			name: 'Palace Gardens',
 			type: 'resource',
-			cost: { coins: 2 },
+			cost: { coins: 3 },
 			effect: { resources: { stone: 2, clay: 1 } }
 		},
 		{
 			id: 45,
 			name: 'Pantheon',
 			type: 'resource',
-			cost: { coins: 2 },
+			cost: { coins: 3 },
 			effect: { resources: { glass: 1, papyrus: 1, cloth: 1 } }
 		},
 
@@ -105,7 +105,7 @@ export function makeDeckAge3(): Card[] {
 			name: 'Chamber of Commerce',
 			type: 'commerce',
 			cost: { clay: 2, papyrus: 1 },
-			effect: { coins: 6 }
+			effect: { coins: 5 }
 		},
 		{
 			id: 57,
@@ -126,14 +126,14 @@ export function makeDeckAge3(): Card[] {
 			name: 'Arena',
 			type: 'commerce',
 			cost: { stone: 1, ore: 1, papyrus: 1 },
-			effect: { coins: 7 }
+			effect: { coins: 5 }
 		},
 		{
 			id: 60,
 			name: 'Stock Exchange',
 			type: 'commerce',
 			cost: { ore: 2, cloth: 1 },
-			effect: { coins: 8 }
+			effect: { coins: 5 }
 		},
 		{
 			id: 61,
@@ -154,7 +154,7 @@ export function makeDeckAge3(): Card[] {
 			name: 'Grand Bazaar',
 			type: 'commerce',
 			cost: { stone: 1, ore: 1, cloth: 1 },
-			effect: { coins: 6 }
+			effect: { coins: 5 }
 		}
 	];
 }

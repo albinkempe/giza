@@ -7,7 +7,7 @@
 		applyWonderEffect,
 		canAfford
 	} from '$lib/logic/resolvePlay';
-	import type { Card } from '$lib/types';
+	import type { Card, Player } from '$lib/types';
 	import wood from '$lib/assets/wood.png';
 	import stone from '$lib/assets/stone.png';
 	import ore from '$lib/assets/ore.png';
@@ -84,7 +84,7 @@
 	};
 
 	let message = 'Game started — Age I';
-
+	let winners: Player[] = [];
 	// ...existing code...
 
 	function pickCard(card: Card, action: 'build' | 'sell' | 'wonder') {
@@ -196,7 +196,11 @@
 					dealNewAge(current);
 					message = `End of Age ${current.age - 1} finished. Scores updated. Age ${current.age} begins!`;
 				} else {
-					message = 'Game over!';
+					const maxScore = Math.max(...current.players.map((p) => p.score));
+					winners = current.players.filter((p) => p.score === maxScore);
+					message = `Game over! ${winners.map((p) => p.wonder.name).join(', ')} won with ${maxScore} points!`;
+					console.log('Final scores:', current.players.map((p) => ({ name: p.name, score: p.score })));
+					console.log('Winners:', winners);
 				}
 			} else if (
 				!message.startsWith('You already built') &&
@@ -233,7 +237,7 @@
 	<div class="game-container">
 		<div class="player-list">
 			{#each $game.players as player, i}
-				<div class="player-summary" class:current={i === 0}>
+				<div class="player-summary" class:current={i === 0} class:winner={winners.some(w => w.name === player.name)}>
 					<div class="wonder">
 						{#if player.wonder && player.wonder.id && wonderImages[player.wonder.id]}
 							<img
@@ -353,7 +357,9 @@
 					<div class="card-effect">
 						{#if card.effect.resources}
 							{#each Object.entries(card.effect.resources) as [res, qty]}
-								<img src={resourceIcons[res]} alt={res} />
+								{#each Array(qty) as _, i}
+									<img src={resourceIcons[res]} alt={res} />
+								{/each}
 							{/each}
 						{/if}
 						{#if card.effect.coins}
@@ -425,6 +431,7 @@
 	.card-effect img {
 		width: 30px;
 		height: 30px;
+		margin-right: 3px;
 	}
 
 	.stats .resource {
@@ -435,17 +442,14 @@
 	.resource {
 		display: flex;
 		align-items: center;
-		gap: 4px;
-		padding: 2px 4px;
-		border-radius: 5px;
-		margin-right: 4px;
+		gap: 5px;
 		margin-bottom: 4px;
 	}
 
 	.resource img {
 		margin-left: 5px;
-		width: 30px;
-		height: 30px;
+		width: 25px;
+		height: 25px;
 	}
 
 	.card-cost img {
@@ -568,8 +572,8 @@
 	}
 
 	.player-summary.winner {
-		background: rgb(77, 74, 60);
-		border-color: rgb(204, 177, 102);
+		background: rgb(77, 74, 60) !important;
+		border-color: rgb(204, 177, 102) !important;
 	}
 
 	.wonder-progress {
