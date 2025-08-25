@@ -24,7 +24,7 @@ export function makeDeckAge1(): Card[] {
 		{ id: 16, name: 'Excavation', type: 'resource', cost: { coins: 1 }, effect: { resources: { stone: 2 } } },
 		{ id: 17, name: 'Stockade', type: 'military', effect: { military: 1 } },
 		{ id: 18, name: 'Baths', type: 'civilian', effect: { points: 3 } },
-		{ id: 19, name: 'Marketplace', type: 'commerce', effect: { coins: 3 } },
+		{ id: 19, name: 'Mercenary Camp', type: 'military', temporary: true, cost: { coins: 1 }, effect: { military: 1 } },
 		{ id: 20, name: 'Clay Pool', type: 'resource', effect: { resources: { clay: 1 } } },
 		{ id: 21, name: 'Mine', type: 'resource', cost: { coins: 1 }, effect: { resources: { ore: 2 } } }
 	];

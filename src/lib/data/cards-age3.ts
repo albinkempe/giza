@@ -109,10 +109,10 @@ export function makeDeckAge3(): Card[] {
 		},
 		{
 			id: 57,
-			name: 'Haven',
-			type: 'commerce',
-			cost: { wood: 1, ore: 1, cloth: 1 },
-			effect: { coins: 5 }
+			name: 'Supply Yard',
+			type: 'resource',
+			cost: { stone: 1, coins: 5 },
+			effect: { resources: { wood: 1, ore: 1, clay: 1 } }
 		},
 		{
 			id: 58,
@@ -153,8 +153,8 @@ export function makeDeckAge3(): Card[] {
 			id: 63,
 			name: 'Grand Bazaar',
 			type: 'commerce',
-			cost: { stone: 1, ore: 1, cloth: 1 },
-			effect: { coins: 5 }
+			cost: { coffee: 1, spice: 1, cloth: 1 },
+			effect: { coins: 5, points: 8 }
 		}
 	];
 }

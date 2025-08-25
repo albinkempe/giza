@@ -86,5 +86,25 @@ export const wonders: Wonder[] = [
 			{ cost: { ore: 2 }, effect: { points: 5 } },
 			{ cost: { papyrus: 1, cloth: 1 }, effect: { points: 7 } }
 		]
+	},
+	{
+		id: 8,
+		name: 'Uppsala Cathedral',
+		baseResource: 'clay',
+		stages: [
+			{ cost: { stone: 2 }, effect: { coins: 3 } },
+			{ cost: { papyrus: 2 }, effect: { points: 5 } },
+			{ cost: { clay: 2, ore: 1 }, effect: { points: 7 } }
+		]
+	},
+	{
+		id: 9,
+		name: 'Lindvalls Coffee',
+		baseResource: 'coffee',
+		stages: [
+			{ cost: { clay: 2 }, effect: { resources: { coffee: 1 } } },
+			{ cost: { glass: 2 }, effect: { resources: { coffee: 1 } } },
+			{ cost: { stone: 2 }, effect: { resources: { coffee: 1 } } }
+		]
 	}
 ];
