@@ -13,6 +13,8 @@ import coin1 from '$lib/assets/coin-1.png';
 import coin3 from '$lib/assets/coin-3.png';
 import coin4 from '$lib/assets/coin-4.png';
 import coin5 from '$lib/assets/coin-5.png';
+import coin6 from '$lib/assets/coin-6.png';
+import coin9 from '$lib/assets/coin-9.png';
 import victory from '$lib/assets/victory.png';
 import victory1 from '$lib/assets/victory-1.png';
 import victory2 from '$lib/assets/victory-2.png';
@@ -39,6 +41,8 @@ export const resourceIcons: Record<string, string> = {
   coin3,
   coin4,
   coin5,
+  coin6,
+  coin9,
   victory,
   victory1,
   victory2,

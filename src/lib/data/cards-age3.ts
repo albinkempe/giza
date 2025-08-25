@@ -116,10 +116,10 @@ export function makeDeckAge3(): Card[] {
 		},
 		{
 			id: 58,
-			name: 'Lighthouse',
-			type: 'commerce',
-			cost: { stone: 1, glass: 1 },
-			effect: { coins: 4 }
+			name: 'Scriptorium',
+			type: 'resource',
+			cost: { stone: 1, wood: 1 },
+			effect: { resources: { papyrus: 1 } }
 		},
 		{
 			id: 59,

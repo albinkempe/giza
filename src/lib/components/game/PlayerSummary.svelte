@@ -114,7 +114,7 @@
 	}
 
 	.player-summary {
-		border: 2px solid #252525;
+		border: 2px solid #5c5c5c;
 		background: #3d3d3d;
 		border-radius: 6px;
 		flex: 0 0 calc(50% - 0.8rem);
