@@ -98,15 +98,15 @@ export function makeDeckAge3(): Card[] {
 			cost: { stone: 2, ore: 1 },
 			effect: { points: 5 }
 		},
-
-		// Commerce cards
 		{
 			id: 56,
-			name: 'Chamber of Commerce',
-			type: 'commerce',
-			cost: { clay: 2, papyrus: 1 },
-			effect: { coins: 5 }
+			name: 'Trade Center',
+			type: 'civilian',
+			cost: { coffee: 1, ore: 2 },
+			effect: { points: 4 }
 		},
+
+		// Commerce cards
 		{
 			id: 57,
 			name: 'Supply Yard',

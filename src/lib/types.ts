@@ -1,6 +1,15 @@
 import type { Wonder } from './data/wonders';
 
-export type ResourceType = 'wood' | 'stone' | 'clay' | 'ore' | 'cloth' | 'glass' | 'papyrus' | 'coffee' | 'spice';
+export type ResourceType =
+	| 'wood'
+	| 'stone'
+	| 'clay'
+	| 'ore'
+	| 'cloth'
+	| 'glass'
+	| 'papyrus'
+	| 'coffee'
+	| 'spice';
 
 export type CardType = 'resource' | 'civilian' | 'military' | 'commerce';
 

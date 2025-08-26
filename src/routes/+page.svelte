@@ -10,12 +10,16 @@
 	let message = 'Game started - Age I';
 	let winners: Player[] = [];
 
-	function handlePick(card: Card, action: "build" | "sell" | "wonder") {
+	function handlePick(card: Card, action: 'build' | 'sell' | 'wonder') {
 		game.update((current) => {
-		const { updatedGame, message: newMessage, winners: newWinners } = pickCard(current, card, action);
-		message = newMessage;
-		winners = newWinners;
-		return updatedGame;
+			const {
+				updatedGame,
+				message: newMessage,
+				winners: newWinners
+			} = pickCard(current, card, action);
+			message = newMessage;
+			winners = newWinners;
+			return updatedGame;
 		});
 	}
 </script>
@@ -41,7 +45,7 @@
 		</div>
 		<div class="cards-container">
 			{#each $game.players[0].hand as card}
-				<HandCard {card} on:pick={e => handlePick(card, e.detail)} />
+				<HandCard {card} on:pick={(e) => handlePick(card, e.detail)} />
 			{/each}
 		</div>
 	</div>

@@ -107,6 +107,12 @@ export function endOfAgeResolve(game: GameState): void {
 		const left = players[(i + 1) % n]; // left neighbor
 		const right = players[(i - 1 + n) % n]; // right neighbor
 
+		if (game.age === 3) {
+			const convertedPoints = Math.floor(me.coins / 3);
+			me.score += convertedPoints;
+			me.coins = me.coins % 3;
+		}
+
 		// compare against left neighbor
 		if ((me.military || 0) > (left.military || 0)) {
 			me.score += winPoints;
@@ -121,10 +127,12 @@ export function endOfAgeResolve(game: GameState): void {
 			me.score -= 1;
 		}
 
+		// points for coffee
 		const coffeeCount = me.resources['coffee'] || 0;
 		me.score += coffeeCount;
-		
-		me.built = me.built.filter(card => !card.temporary);
+
+		// reset temporary resources
+		me.built = me.built.filter((card) => !card.temporary);
 
 		me.resources = { [me.wonder.baseResource]: 1 };
 

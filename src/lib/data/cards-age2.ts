@@ -69,7 +69,14 @@ export function makeDeckAge2(): Card[] {
 			cost: { wood: 1, clay: 1, glass: 1 },
 			effect: { points: 4 }
 		},
-		{ id: 34, name: 'Statue', type: 'civilian', cost: { ore: 2, wood: 1 }, altcost: 11, effect: { points: 4 } },
+		{
+			id: 34,
+			name: 'Statue',
+			type: 'civilian',
+			cost: { ore: 2, wood: 1 },
+			altcost: 11,
+			effect: { points: 4 }
+		},
 		{ id: 35, name: 'Aqueduct', type: 'civilian', cost: { stone: 3 }, effect: { points: 5 } },
 		{
 			id: 36,
@@ -94,11 +101,23 @@ export function makeDeckAge2(): Card[] {
 			cost: { wood: 2 },
 			effect: { coins: 3, resources: { wood: 1, stone: 1, clay: 1, ore: 1 } }
 		},
-		{ id: 39, name: 'Roastery', type: 'resource', cost: { clay: 2 }, effect: { resources: { coffee: 1 } } },
+		{
+			id: 39,
+			name: 'Roastery',
+			type: 'resource',
+			cost: { clay: 2 },
+			effect: { resources: { coffee: 1 } }
+		},
 		{ id: 40, name: 'Bazar', type: 'commerce', effect: { coins: 3 } },
 
 		// More resource and civilian cards for balance
-		{ id: 41, name: 'Spice Market', type: 'resource', cost: { wood: 1, cloth: 1 }, effect: { resources: { spice: 1 } } },
+		{
+			id: 41,
+			name: 'Spice Market',
+			type: 'resource',
+			cost: { wood: 1, cloth: 1 },
+			effect: { resources: { spice: 1 } }
+		},
 		{
 			id: 42,
 			name: 'Library',

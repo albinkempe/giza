@@ -7,38 +7,41 @@
 	export let card: Card;
 	const dispatch = createEventDispatcher();
 
-	function pick(action: "build" | "sell" | "wonder") {
-		dispatch("pick", action);
+	function pick(action: 'build' | 'sell' | 'wonder') {
+		dispatch('pick', action);
 	}
 </script>
 
 <div class="card-buttons card-type-{card.type}">
-    <div class="card-info">
-        <h2>{card.name}</h2>
-        <div class="card-effect">
-            {#if card.effect.resources}
-                {#each Object.entries(card.effect.resources) as [res, qty]}
-                    {#each Array(qty) as _, i}
-                        <img src={resourceIcons[res]} alt={res} />
-                    {/each}
-                {/each}
-            {/if}
-            {#if card.effect.coins}
-                <img src={resourceIcons['coin' + card.effect.coins]} alt={'coin' + card.effect.coins} />
-            {/if}
-            {#if card.effect.military}
-                {#each Array(card.effect.military) as _, i}
-                    <img src={resourceIcons['military']} alt="military" />
-                {/each}
-            {/if}
-            {#if card.effect.points}
-                <img src={resourceIcons['victory' + card.effect.points]} alt={'victory' + card.effect.points} />
-            {/if}
-        </div>
-        {#if card.temporary}
-            <p class="card-temporary">Temporary, removed after end of age</p>
-        {/if}
-    </div>
+	<div class="card-info">
+		<h2>{card.name}</h2>
+		<div class="card-effect">
+			{#if card.effect.resources}
+				{#each Object.entries(card.effect.resources) as [res, qty]}
+					{#each Array(qty) as _, i}
+						<img src={resourceIcons[res]} alt={res} />
+					{/each}
+				{/each}
+			{/if}
+			{#if card.effect.coins}
+				<img src={resourceIcons['coin' + card.effect.coins]} alt={'coin' + card.effect.coins} />
+			{/if}
+			{#if card.effect.military}
+				{#each Array(card.effect.military) as _, i}
+					<img src={resourceIcons['military']} alt="military" />
+				{/each}
+			{/if}
+			{#if card.effect.points}
+				<img
+					src={resourceIcons['victory' + card.effect.points]}
+					alt={'victory' + card.effect.points}
+				/>
+			{/if}
+		</div>
+		{#if card.temporary}
+			<p class="card-temporary">Temporary, removed after end of age</p>
+		{/if}
+	</div>
 
 	<div class="card-cost">
 		{#if card.cost && Object.keys(card.cost).length > 0}
@@ -56,11 +59,11 @@
 		{/if}
 	</div>
 
-    {#if card.altcost}
-        <div class="card-altcost">
-            <p>{getCardNameById(card.altcost)}</p>
-        </div>
-    {/if}
+	{#if card.altcost}
+		<div class="card-altcost">
+			<p>{getCardNameById(card.altcost)}</p>
+		</div>
+	{/if}
 
 	<!-- Actions -->
 	<div class="card-actions">
@@ -70,21 +73,20 @@
 	</div>
 </div>
 
-
 <style>
-    .card-info {
-        background-color: rgba(150, 150, 150, 0.322);
-        width: 100%;
-        border-radius: 8px 8px 0 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 1rem;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-    }
+	.card-info {
+		background-color: rgba(150, 150, 150, 0.322);
+		width: 100%;
+		border-radius: 8px 8px 0 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 1rem;
+		border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+	}
 
 	.card-cost img,
-    .card-effect img {
+	.card-effect img {
 		margin-right: 3%;
 		width: 40px;
 		height: 40px;
@@ -97,7 +99,7 @@
 	.card-buttons {
 		display: flex;
 		flex-direction: column;
-        align-items: center;
+		align-items: center;
 		border-radius: 8px;
 		box-shadow: 0 2px 6px #0001;
 		transition: background 0.2s;
@@ -108,29 +110,29 @@
 		width: 30%;
 	}
 
-    .card-effect {
+	.card-effect {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 	}
 
-    .card-cost,
-    .card-altcost {
+	.card-cost,
+	.card-altcost {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-        line-height: 0.5em;
+		line-height: 0.5em;
 	}
 
 	.card-actions {
 		display: flex;
-        flex-direction: row;
-        width: 90%;
+		flex-direction: row;
+		width: 90%;
 		gap: 8px;
 		margin: 8px 0;
 	}
 
-    button {
+	button {
 		padding: 12px 20px;
 		display: block;
 		background: #222222;
