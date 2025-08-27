@@ -7,6 +7,7 @@ import lindvalls from '$lib/assets/lindvalls.png';
 import halicarnassos from '$lib/assets/halikarnassos.png';
 import rhodos from '$lib/assets/rhodos.png';
 import alexandria from '$lib/assets/alexandria.png';
+import kth from '$lib/assets/kth.png';
 
 export const wonderImages: Record<number, string> = {
 	1: giza,
@@ -17,5 +18,6 @@ export const wonderImages: Record<number, string> = {
 	6: rhodos,
 	7: alexandria,
 	8: uppsala,
-	9: lindvalls
+	9: lindvalls,
+	10: kth
 };

@@ -106,5 +106,15 @@ export const wonders: Wonder[] = [
 			{ cost: { glass: 2 }, effect: { resources: { coffee: 1 } } },
 			{ cost: { stone: 2 }, effect: { resources: { coffee: 1 } } }
 		]
+	},
+	{
+		id: 10,
+		name: 'KTH Royal Institute of Technology',
+		baseResource: 'papyrus',
+		stages: [
+			{ cost: { stone: 2 }, effect: { resources: { papyrus: 1 } } },
+			{ cost: { coffee: 1 }, effect: { points: 3 } },
+			{ cost: { wood: 2, glass: 1 }, effect: { points: 7 } }
+		]
 	}
 ];

@@ -152,9 +152,9 @@ export function makeDeckAge3(): Card[] {
 		{
 			id: 63,
 			name: 'Grand Bazaar',
-			type: 'commerce',
+			type: 'civilian',
 			cost: { coffee: 1, spice: 1, cloth: 1 },
-			effect: { coins: 5, points: 8 }
+			effect: { points: 8 }
 		}
 	];
 }

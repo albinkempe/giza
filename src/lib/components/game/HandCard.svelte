@@ -87,7 +87,6 @@
 
 	.card-cost img,
 	.card-effect img {
-		margin-right: 3%;
 		width: 40px;
 		height: 40px;
 	}
@@ -120,7 +119,11 @@
 	.card-altcost {
 		display: flex;
 		flex-direction: row;
+		flex-wrap: wrap;
 		align-items: center;
+		justify-content: center;
+		width: 90%;
+		gap: 0.3em;
 		line-height: 0.5em;
 	}
 

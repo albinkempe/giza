@@ -16,7 +16,7 @@ export function makeDeckAge1(): Card[] {
 			cost: { coins: 1 },
 			effect: { resources: { wood: 2 } }
 		},
-		{ id: 9, name: 'Stone Pit', type: 'resource', effect: { resources: { stone: 1 } } },
+		{ id: 9, name: 'Glassworks', type: 'resource', effect: { resources: { glass: 1 } } },
 		{ id: 10, name: 'Guard Tower', type: 'military', effect: { military: 1 } },
 		{ id: 11, name: 'Altar', type: 'civilian', effect: { points: 3 } },
 		{ id: 12, name: 'Marketplace', type: 'commerce', effect: { coins: 3 } },
@@ -27,8 +27,8 @@ export function makeDeckAge1(): Card[] {
 			cost: { coins: 1 },
 			effect: { resources: { clay: 2 } }
 		},
-		{ id: 14, name: 'Ore Vein', type: 'resource', effect: { resources: { ore: 1 } } },
-		{ id: 15, name: 'Lumber Yard', type: 'resource', effect: { resources: { wood: 1 } } },
+		{ id: 14, name: 'Press', type: 'resource', effect: { resources: { papyrus: 1 } } },
+		{ id: 15, name: 'Loom', type: 'resource', effect: { resources: { cloth: 1 } } },
 		{
 			id: 16,
 			name: 'Excavation',
@@ -46,7 +46,7 @@ export function makeDeckAge1(): Card[] {
 			cost: { coins: 1 },
 			effect: { military: 1 }
 		},
-		{ id: 20, name: 'Clay Pool', type: 'resource', effect: { resources: { clay: 1 } } },
+		{ id: 20, name: 'Coffee Plantation', type: 'resource', effect: { resources: { coffee: 1 } } },
 		{
 			id: 21,
 			name: 'Mine',
