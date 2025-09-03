@@ -3,6 +3,8 @@
 	import { resourceIcons } from '$lib/assets/icons';
 	import { getCardNameById } from '$lib/utils/cards';
 	import { createEventDispatcher } from 'svelte';
+	import Tooltip from '../ui/Tooltip.svelte';
+	import { resourceDescriptions } from '$lib/data/resourceDescriptions';
 
 	export let card: Card;
 	const dispatch = createEventDispatcher();
@@ -19,23 +21,29 @@
 			{#if card.effect.resources}
 				{#each Object.entries(card.effect.resources) as [res, qty]}
 					{#each Array(qty) as _, i}
-						<img src={resourceIcons[res]} alt={res} />
+						<Tooltip text={resourceDescriptions[res]}>
+							<img src={resourceIcons[res]} alt={res} />
+						</Tooltip>
 					{/each}
 				{/each}
 			{/if}
 			{#if card.effect.coins}
-				<img src={resourceIcons['coin' + card.effect.coins]} alt={'coin' + card.effect.coins} />
+				<Tooltip text={resourceDescriptions['coin' + card.effect.coins]}>
+					<img src={resourceIcons['coin' + card.effect.coins]} alt={'coin' + card.effect.coins} />
+				</Tooltip>
 			{/if}
 			{#if card.effect.military}
 				{#each Array(card.effect.military) as _, i}
-					<img src={resourceIcons['military']} alt="military" />
+					<Tooltip text={resourceDescriptions['military1']}><img src={resourceIcons['military']} alt="military" /></Tooltip>
 				{/each}
 			{/if}
 			{#if card.effect.points}
-				<img
-					src={resourceIcons['victory' + card.effect.points]}
-					alt={'victory' + card.effect.points}
-				/>
+				<Tooltip text={resourceDescriptions['victory' + card.effect.points]}>
+					<img
+						src={resourceIcons['victory' + card.effect.points]}
+						alt={'victory' + card.effect.points}
+					/>
+				</Tooltip>
 			{/if}
 		</div>
 		{#if card.temporary}
@@ -47,10 +55,14 @@
 		{#if card.cost && Object.keys(card.cost).length > 0}
 			{#each Object.entries(card.cost) as [res, qty]}
 				{#if res === 'coins'}
-					<img src={resourceIcons['coin' + qty]} alt={'coin' + qty} />
+					<Tooltip text={resourceDescriptions['coin' + qty]}>
+						<img src={resourceIcons['coin' + qty]} alt={'coin' + qty} />
+					</Tooltip>
 				{:else}
 					{#each Array(qty) as _, i}
-						<img src={resourceIcons[res]} alt={res} />
+						<Tooltip text={resourceDescriptions[res]}>
+							<img src={resourceIcons[res]} alt={res} />
+						</Tooltip>
 					{/each}
 				{/if}
 			{/each}

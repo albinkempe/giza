@@ -3,6 +3,8 @@
 	import { wonderImages } from '$lib/assets/wonders';
 	import { resourceIcons } from '$lib/assets/icons';
 	import WonderStages from './WonderStages.svelte';
+	import Tooltip from '../ui/Tooltip.svelte';
+	import { resourceDescriptions } from '$lib/data/resourceDescriptions';
 
 	export let player: Player;
 	export let i: number;
@@ -32,15 +34,21 @@
 	<div class="player-info">
 		<div class="stats">
 			<div class="resource">
-				<img src={resourceIcons['coin']} alt="coin" />
+				<Tooltip text={resourceDescriptions['coin']}>
+					<img src={resourceIcons['coin']} alt="coin" />
+				</Tooltip>
 				<span>{player.coins}</span>
 			</div>
 			<div class="resource">
-				<img src={resourceIcons['military']} alt="military" />
+				<Tooltip text={resourceDescriptions['military']}>
+					<img src={resourceIcons['military']} alt="military" />
+				</Tooltip>
 				<span>{player.military}</span>
 			</div>
 			<div class="resource">
-				<img src={resourceIcons['victory']} alt="score" />
+				<Tooltip text={resourceDescriptions['victory']}>
+					<img src={resourceIcons['victory']} alt="score" />
+				</Tooltip>
 				<span>{player.score}</span>
 			</div>
 		</div>
@@ -49,7 +57,9 @@
 		<div class="resources">
 			{#each Object.entries(player.resources) as [res, count]}
 				<div class="resource">
-					<img src={resourceIcons[res]} alt={res} />
+					<Tooltip text={resourceDescriptions[res]}>
+						<img src={resourceIcons[res]} alt={res} />
+					</Tooltip>
 					<span>{count}</span>
 				</div>
 			{/each}

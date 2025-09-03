@@ -1,0 +1,35 @@
+export const resourceDescriptions: Record<string, string> = {
+  coffee: "Coffee - A rare trade good for advanced commerce. Grants 1 victory point at the end of each age per coffee resource owned",
+  wood: "Wood - Basic material for construction",
+  stone: "Stone - Sturdy material for buildings and wonders",
+  ore: "Ore - Essential for advanced structures",
+  clay: "Clay - Used in construction and manufacturing",
+  glass: "Glass - Refined material for scientific and civic buildings",
+  cloth: "Cloth - Luxury material for commerce and culture",
+  papyrus: "Papyrus - Special resource for science and progress",
+  spice: "Spice - Valuable trade good for commerce",
+
+  military: "Military strength - Used in conflicts with neighbors. Player with the most military strength wins battles and earn points at the end of each age",
+  military1: "1 military strength",
+
+  coin: "Coins - Used in trade and construction. Each 3 coins is converted to 1 victory point at the end of the game",
+  coin1: "1 coin",
+  coin2: "2 coins",
+  coin3: "3 coins",
+  coin4: "4 coins",
+  coin5: "5 coins",
+  coin6: "6 coins",
+  coin7: "7 coins",
+  coin8: "8 coins",
+  coin9: "9 coins",
+
+  victory: "Victory points - The player with the most victory points at the end of the game wins",
+  victory1: "1 victory point",
+  victory2: "2 victory points",
+  victory3: "3 victory points",
+  victory4: "4 victory points",
+  victory5: "5 victory points",
+  victory6: "6 victory points",
+  victory7: "7 victory points",
+  victory8: "8 victory points"
+};

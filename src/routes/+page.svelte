@@ -5,7 +5,6 @@
 	import { pickCard } from '$lib/logic/playerActions';
 	import PlayerSummary from '$lib/components/game/PlayerSummary.svelte';
 	import HandCard from '$lib/components/game/HandCard.svelte';
-	import { fade } from 'svelte/transition';
 
 	let message = 'Game started - Age I';
 	let winners: Player[] = [];
@@ -74,11 +73,11 @@
 
 	.cards-container {
 		display: flex;
-		flex-wrap: wrap; /* single row */
+		flex-wrap: wrap;
 		flex-direction: row;
 		gap: 1rem;
 		align-content: flex-start;
-		overflow-x: auto; /* horizontal scroll if overflow */
+		overflow: visible;
 		padding-bottom: 8px;
 		width: 45vw;
 		justify-content: space-between;
@@ -86,7 +85,7 @@
 
 	.player-list {
 		display: flex;
-		flex-wrap: wrap; /* single row */
+		flex-wrap: wrap;
 		justify-content: space-between;
 		padding-bottom: 8px;
 		gap: 1rem;
